@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/leaflet.css">
+  <title>Restaurant Reviews</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="/" aria-label="Home">Restaurant Reviews</a></h1>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <section id="map-container">
+      <div id="map" role="application" aria-label="Maps overview of restaurants"></div>
+    </section>
+    <section>
+      <div id="filter-options" class="filter-options" aria-label="Filters for your restaurant search">
+        <!-- https://www.w3.org/TR/html-aria/ - Select elements should not have aria roles as they're handled properly by assistive technologies -->
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+      <ul id="restaurants-list"></ul>
+    </section>
+  </main>
+    
+  <script src="js/leaflet.js" ></script>
+  <script src="js/dbhelper.js"></script>
+  <script src="js/main.js"></script>
+
+
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/" aria-label="Home"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>
